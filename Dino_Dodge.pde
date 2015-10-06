@@ -14,6 +14,6 @@ void draw() {
   ellipse(x, 175, 50, 50);
   
   //create the appearance of moving by changing the x position
-  x = x-1;
+  x = x-4;
   
 }
