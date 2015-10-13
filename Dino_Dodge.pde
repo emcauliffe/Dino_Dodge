@@ -54,12 +54,10 @@ void draw() {
   dinoA = dinoA + gravity;
   dinoS = dinoS + dinoA;
   dinoY = dinoY + dinoS;
-  
-  if (dinoY < 70) {
-    dinoY = 70;
-  }
 
   if (dinoY > 170) {
+    dinoS = 0;
+    dinoA = 0;
     dinoY = 170;
   }
   
@@ -89,5 +87,5 @@ void draw() {
 
 void keyPressed() {
   //dinoY=-1;
-  dinoA=-1;
+  dinoA=-8;
 }
