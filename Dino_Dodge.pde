@@ -55,12 +55,23 @@ void draw() {
   dinoS = dinoS + dinoA;
   dinoY = dinoY + dinoS;
 
+  if (dinoA < 0) {
+    dinoA = 0;
+  }
+  if (dinoA > 8) {
+    dinoA = 0;
+  }
+  
+  if (dinoY < 0) {
+    dinoY = 0;
+  }
+  
   if (dinoY > 170) {
     dinoS = 0;
     dinoA = 0;
     dinoY = 170;
   }
-  
+
   ellipse(50, dinoY, 60, 60);  //draw dino
   //create the appearance of moving by changing the x position
   s1 = s1 + a1;
