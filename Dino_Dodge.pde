@@ -55,12 +55,12 @@ void draw() {
   dinoS = dinoS + dinoA;
   dinoY = dinoY + dinoS;
 
-  if (dinoA < 0) {
-    dinoA = 0;
-  }
-  if (dinoA > 8) {
-    dinoA = 0;
-  }
+  //if (dinoA < 0) {
+  //  dinoA = 0;
+  //}
+  //if (dinoA > 8) {
+  //  dinoA = 0;
+  //}
   
   if (dinoY < 0) {
     dinoY = 0;
@@ -98,5 +98,5 @@ void draw() {
 
 void keyPressed() {
   //dinoY=-1;
-  dinoA=-8;
+  dinoA=-1;
 }
