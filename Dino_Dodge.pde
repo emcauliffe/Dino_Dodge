@@ -16,6 +16,7 @@ float distancex1; //track distance between dino and cactus x1
 float distancex2; //track distance between dino and cactus two
 int score;  //track score
 int gameover; //is game over
+int highscore; //highscore
 
 //Runs once
 void setup() {
@@ -37,27 +38,34 @@ void setup() {
   dinoA = 0; //accel. of dino
   gravity = 0.0675; //gravity
   score = 0;
+  highscore = 0;
 }
 //Runs repeatedly
 void draw() {
   background(255);
   fill (0);
   if (gameover > 0) {
+    if (score > highscore) {
+        highscore = score;
+      }
     textSize(75);
     fill(0);
-    text("GAME OVER", 175, 125);
+    text("GAME OVER", 175, 100);
     textSize(15);
-    text("Press R to restart", 343, 156);
+    text("Press R to restart", 261, 133);
+    text("Highscore: " + highscore, 418, 133);
+    text("Score: " + score, 378, 163);
   }
   if (gameover < 1) {
     //status updates
-    textSize(12);
-    text("dinoY is " + dinoY, 150, 25);
-    text("dinoS is " + dinoS, 150, 50);
-    text("dinoA is " + dinoA, 150, 75);
-    text("distancex1 is " + distancex1, 150, 100);
-    text("distancex2 is " + distancex2, 350, 100);
-    text("score:" + score, 150, 125);
+    //textSize(12);
+    //text("dinoY is " + dinoY, 150, 25);
+    //text("dinoS is " + dinoS, 150, 50);
+    //text("dinoA is " + dinoA, 150, 75);
+    //text("distancex1 is " + distancex1, 150, 100);
+    //text("distancex2 is " + distancex2, 350, 100);
+    text("score:" + score, 725, 15);
+
 
     //determine whether there is a hit on cactus one
     float ax1 = dinoY - 175; //leg a
@@ -83,15 +91,17 @@ void draw() {
     dinoY = dinoY + dinoS;
 
     if (distancex1 < (30 + 25)) {
-      textSize(80);
-      //text("HIT", 300, 100);
-      score = -1;
+      noStroke();
+      fill(255);
+      rect(0, 0, 800, 200);
+      gameover = 1;
     }
 
     if (distancex2 < (30 + 25)) {
-      textSize(80);
-      //text("HIT", 300, 100);
-      score = -1;
+      noStroke();
+      fill(255);
+      rect(0, 0, 800, 200);
+      gameover = 1;
     }
 
     if (dinoY > 170) {
@@ -126,12 +136,12 @@ void draw() {
       score = score + 1;
     }
 
-    if (score < 0) {
-      noStroke();
-      fill(255);
-      rect(0, 0, 800, 200);
-      gameover = 1;
-    }
+    //if (score < 0) {
+    //  noStroke();
+    //  fill(255);
+    //  rect(0, 0, 800, 200);
+    //  gameover = 1;
+    //}
     //if (x3 < -26) {                   //
     //  x3 = 920;                       //  
     //  s3 = -3;
@@ -147,7 +157,24 @@ void keyPressed() {
   if (gameover > 0) {
     if (key == 'r' || key =='R') {
       gameover = 0;
-      setup();
+      //set initial position of cactus
+      x1 = 900; //cactus one
+      x2 = 1050;  //cactus two
+      //x3 = 1200;  //cactus three
+      a1 = -0.4;  //accel. of cactus one
+      s1 = -3;  //initial speed of cactus one
+      a2 = -0.4; //accel. of cactus two
+      s2 = -3; //initial accel of cactus two
+      //a3 = 0.6; //accel. of cactus three
+      //s3 = -3; //initial speed of cactus three
+      dinoY = 170; //initial vertical position of dino
+      dinoS = 0; //initial dino speed
+      dinoA = 0; //accel. of dino
+      gravity = 0.0675; //gravity
+      if (score > highscore) {
+        highscore = score;
+      }
+      score = 0;
     }
   }
 }
