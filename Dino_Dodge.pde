@@ -1,12 +1,6 @@
 //global variables
 Cactus c1; //makes a plave in memory to keep cactus object
-// start cactus variables
-//float x2; //tracks x coord of second cactus
-//float a2; //tracks acceleration of x2
-//float s2; //tracks speed of x2
-//float x3; //tracks x coord of third cactus
-//float a3; //tracks acceleration of x3
-//float s3; //tracks speed of x3
+Cactus c2;
 //end cactus variables
 
 //start dino variables
@@ -27,7 +21,8 @@ int highscore; //highscore
 void setup() {
   size(800, 200);
   frameRate(60);
-  c1 = new Cactus(900, 175, -1, -2);
+  c1 = new Cactus(900, 175, -0.4, -3);
+  c2 = new Cactus(1050, 175, -0.4, -3);
   gameover = 0;
   //set initial position of cactus
   //x1 = 900; //cactus one
@@ -50,32 +45,17 @@ void setup() {
 void draw() {
   background(255);
   fill (0);
-  //if (gameover > 0) {
-  //  if (score > highscore) {
-  //    highscore = score;
-  //  }
-  //  textSize(75);
-  //  fill(0);
-  //  text("GAME OVER", 175, 100);
-  //  textSize(15);
-  //  text("Press R to restart", 261, 133);
-  //  text("Highscore: " + highscore, 418, 133);
-  //  text("Score: " + score, 378, 163);
-  //}
-  //if (gameover < 1) {
+  c1.update(gravity);
+  c2.update(gravity);
   //status updates
   //textSize(12);
-  //text("dinoY is " + dinoY, 150, 25);
-  //text("dinoS is " + dinoS, 150, 50);
-  //text("dinoA is " + dinoA, 150, 75);
-  //text("distancex1 is " + distancex1, 150, 100);
-  //text("distancex2 is " + distancex2, 350, 100);
-  //text("score:" + score, 725, 15);
-  c1.update(gravity);
-  c1.update(x_);
-  c1.update(a_);
-  c1.update(y_);
-  c1.update(s_);
+  text("dinoY is " + dinoY, 150, 25);
+  text("dinoS is " + dinoS, 150, 50);
+  text("dinoA is " + dinoA, 150, 75);
+  text("distancex1 is " + distancex1, 150, 100);
+  text("distancex2 is " + distancex2, 350, 100);
+  text("score:" + score, 725, 15);
+  
 
   ////determine whether there is a hit on cactus one
   //float ax1 = dinoY - 175; //leg a

@@ -4,11 +4,11 @@ class Cactus {
   float s1; //tracks speed of x1
   float y1; //tracks y coord of first cactus
 
-  Cactus (float x_, float y_, float a_, float s_) {
-    x1 = x_;
-    a1 = a_;
-    s1 = s_;
-    y1 = y_;
+  Cactus (float xa, float ya, float aa, float sa) {
+    x1 = xa;
+    a1 = aa;
+    s1 = sa;
+    y1 = ya;
   }
   void update(float gravity) {
     //make cactus move
