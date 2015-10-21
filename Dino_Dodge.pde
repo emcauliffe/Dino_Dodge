@@ -1,6 +1,6 @@
 //global variables
-Cactus c1; //makes a plave in memory to keep cactus object
-Cactus c2;
+Cactus1 c1; //makes a plave in memory to keep cactus object
+Cactus2 c2;
 //end cactus variables
 
 //start dino variables
@@ -20,16 +20,10 @@ int highscore; //highscore
 void setup() {
   size(800, 200);
   frameRate(60);
-  c1 = new Cactus(900, 175, -0.4, -3);
-  c2 = new Cactus(1050, 175, -0.4, -3);
+  c1 = new Cactus1(900, 175, -0.3, -3);
+  c2 = new Cactus2(1050, 175, -0.3, -3);
   //set initial position of cactus
-  //x1 = 900; //cactus one
-  //x2 = 1050;  //cactus two
   //x3 = 1200;  //cactus three
-  //a1 = -0.4;  //accel. of cactus one
-  //s1 = -3;  //initial speed of cactus one
-  //a2 = -0.4; //accel. of cactus two
-  //s2 = -3; //initial accel of cactus two
   //a3 = 0.6; //accel. of cactus three
   //s3 = -3; //initial speed of cactus three
   dinoY = 170; //initial vertical position of dino
@@ -129,7 +123,7 @@ void draw() {
 void keyPressed() {
   if (key == ' ') {
     if (dinoY > 169) {
-      dinoA=-1;
+      dinoA=-1.1;
     }
   }
   //if (gameover > 0) {

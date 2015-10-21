@@ -1,10 +1,10 @@
-class Cactus {
+class Cactus1 {
   float x1; //tracks x coord of first cactus
   float a1; //tracks acceleration of x1
   float s1; //tracks speed of x1
   float y1; //tracks y coord of first cactus
 
-  Cactus (float xa, float ya, float aa, float sa) {
+  Cactus1 (float xa, float ya, float aa, float sa) {
     x1 = xa;
     a1 = aa;
     s1 = sa;
