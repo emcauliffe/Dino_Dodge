@@ -14,7 +14,6 @@ float gravity; //gravity
 float distancex1; //track distance between dino and cactus x1
 float distancex2; //track distance between dino and cactus two
 int score;  //track score
-int gameover; //is game over
 int highscore; //highscore
 
 //Runs once
@@ -23,7 +22,6 @@ void setup() {
   frameRate(60);
   c1 = new Cactus(900, 175, -0.4, -3);
   c2 = new Cactus(1050, 175, -0.4, -3);
-  gameover = 0;
   //set initial position of cactus
   //x1 = 900; //cactus one
   //x2 = 1050;  //cactus two
