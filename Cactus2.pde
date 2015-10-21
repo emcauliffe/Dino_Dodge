@@ -3,7 +3,7 @@ class Cactus2 {
   float a2; //tracks acceleration of x1
   float s2; //tracks speed of x1
   float y2; //tracks y coord of first cactus
-
+  
   Cactus2 (float xb, float yb, float ab, float sb) {
     x2 = xb;
     a2 = ab;
