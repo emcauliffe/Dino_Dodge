@@ -1,6 +1,6 @@
 //global variables
-Cactus1 c1; //makes a plave in memory to keep cactus object
-Cactus2 c2;
+Cactus c1; //makes a plave in memory to keep cactus object
+Cactus c2;
 //end cactus variables
 
 //start dino variables
@@ -20,8 +20,8 @@ int highscore; //highscore
 void setup() {
   size(800, 200);
   frameRate(60);
-  c1 = new Cactus1(900, 175, -0.3, -3);
-  c2 = new Cactus2(1050, 175, -0.3, -3);
+  c1 = new Cactus(900, 175, -0.3, -3, 900);
+  c2 = new Cactus(1050, 175, -0.3, -3, 1050);
   //set initial position of cactus
   //x3 = 1200;  //cactus three
   //a3 = 0.6; //accel. of cactus three
@@ -49,15 +49,15 @@ void draw() {
   text("score:" + score, 725, 15);
   
 
-  ////determine whether there is a hit on cactus one
-  //float ax1 = dinoY - 175; //leg a
-  //float bx1 = x1 - 50;  //leg b
-  //distancex1 = sqrt(pow(ax1, 2)+pow(bx1, 2));
+  //determine whether there is a hit on cactus one
+  float ax1 = dinoY - 175; //leg a
+  float bx1 = c1.getX() - 50;  //leg b
+  distancex1 = sqrt(pow(ax1, 2)+pow(bx1, 2));
 
-  ////determine whether there is a hit on cactus two
-  //float ax2 = dinoY - 175; //leg a
-  //float bx2 = x2 - 50;  //leg b
-  //distancex2 = sqrt(pow(ax2, 2)+pow(bx2, 2));
+  //determine whether there is a hit on cactus two
+  float ax2 = dinoY - 175; //leg a
+  float bx2 = c1.getX() - 50;  //leg b
+  distancex2 = sqrt(pow(ax2, 2)+pow(bx2, 2));
 
   //move the dino
   dinoA = dinoA + gravity;
