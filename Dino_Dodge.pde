@@ -1,15 +1,7 @@
 //global variables
-Cactus c1; //makes a plave in memory to keep cactus object
-Cactus c2;
-//end cactus variables
-
-//start dino variables
-float dinoY; //tracks y coord of dino
-float dinoS; //tracks speed of dino
-float dinoA; //tracks acceleration of the dino
-//end dino variables
-
-
+Cactus c1; //makes a plave in memory to keep cactus 1object
+Cactus c2; // "                " cactus 2 object
+Dino d1; // "                " dino object
 float gravity; //gravity
 float distancex1; //track distance between dino and cactus x1
 float distancex2; //track distance between dino and cactus two
@@ -20,15 +12,12 @@ int highscore; //highscore
 void setup() {
   size(800, 200);
   frameRate(60);
-  c1 = new Cactus(900, 175, -0.3, -3, 900);
-  c2 = new Cactus(1050, 175, -0.3, -3, 1050);
-  //set initial position of cactus
+  c1 = new Cactus(900, 175, -0.3, -3, 50, 900);
+  c2 = new Cactus(1050, 175, -0.3, -3, 45, 1050);
+  d1 = new Dino(170, 0, 0);
   //x3 = 1200;  //cactus three
   //a3 = 0.6; //accel. of cactus three
   //s3 = -3; //initial speed of cactus three
-  dinoY = 170; //initial vertical position of dino
-  dinoS = 0; //initial dino speed
-  dinoA = 0; //accel. of dino
   gravity = 0.0675; //gravity
   score = 0;
   highscore = 0;
@@ -39,52 +28,24 @@ void draw() {
   fill (0);
   c1.update(gravity);
   c2.update(gravity);
+  d1.update(gravity);
   //status updates
   //textSize(12);
-  text("dinoY is " + dinoY, 150, 25);
-  text("dinoS is " + dinoS, 150, 50);
-  text("dinoA is " + dinoA, 150, 75);
-  text("distancex1 is " + distancex1, 150, 100);
-  text("distancex2 is " + distancex2, 350, 100);
-  text("score:" + score, 725, 15);
-  
+  //text("dinoY is " + dinoY, 150, 25);
+  //text("dinoS is " + dinoS, 150, 50);
+  //text("dinoA is " + dinoA, 150, 75);
+  //text("distancex1 is " + distancex1, 150, 100);
+  //text("distancex2 is " + distancex2, 350, 100);
+  //text("score:" + score, 725, 15);
 
   //determine whether there is a hit on cactus one
-  float ax1 = dinoY - 175; //leg a
-  float bx1 = c1.getX() - 50;  //leg b
-  distancex1 = sqrt(pow(ax1, 2)+pow(bx1, 2));
-
+  //  float ax1 = dinoY - 175; //leg a
+  //  float bx1 = c1.getX() - 50;  //legb
+  //  distancex1 = sqrt(pow(ax1, 2)+pow(bx1, 2)
   //determine whether there is a hit on cactus two
-  float ax2 = dinoY - 175; //leg a
-  float bx2 = c1.getX() - 50;  //leg b
-  distancex2 = sqrt(pow(ax2, 2)+pow(bx2, 2));
-
-  //move the dino
-  dinoA = dinoA + gravity;
-  dinoS = dinoS + dinoA;
-  dinoY = dinoY + dinoS;
-
-  if (dinoY > 170) {
-    dinoS = 0;
-    dinoA = 0;
-    dinoY = 170;
-  }
-
-  ellipse(50, dinoY, 60, 60);  //draw dino
-  //create the appearance of moving by changing the x position
-  //x2 = x2 + s2;
-  //s2 = s2 + a2;
-  //x3 = x3 + s3;
-  //s3 = s3 + a3;
-
-
-  //       x    y   w    h
-
-  //ellipse(x2, 175, 50, 50); // Cactus Two
-
-  //ellipse(x3, 175, 50, 50); // Cactus Three
-
-
+  //  float ax2 = dinoY - 175; //leg a
+  //  float bx2 = c1.getX() - 50;  //leg b
+  //  distancex2 = sqrt(pow(ax2, 2)+pow(bx2, 
 
   //if (distancex1 < (30 + 25)) {
   //  noStroke();
@@ -121,11 +82,11 @@ void draw() {
   //}
 }
 void keyPressed() {
-  if (key == ' ') {
-    if (dinoY > 169) {
-      dinoA=-1.1;
-    }
-  }
+  //if (key == ' ') {
+  //  if (dinoY > 169) {
+  //    dinoA=-1.1;
+  //  }
+  //}
   //if (gameover > 0) {
   //  if (key == 'r' || key =='R') {
   //    gameover = 0;
@@ -148,5 +109,5 @@ void keyPressed() {
   //    }
   //    score = 0;
   //}
+   //}
 }
-//}
