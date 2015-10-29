@@ -14,10 +14,10 @@ class Cactus {
     r1 = r_;
     resetPosition = rp_;
   }
-  
+
   void update(float gravity) {
     //make cactus move
-    ellipse(x1, 175, r1, r1); // Cactus One
+    ellipse(x1, y1, r1*2, r1*2); // Cactus One
     s1 = s1 + a1; //change speed
     x1 = x1 + s1; //change x coord
     if (x1 < -26) {
@@ -31,5 +31,10 @@ class Cactus {
   float getX() {
     return x1;
   }
-  
+  float getY() {
+    return y1;
+  }
+  float getR() {
+    return (r1);
+  }
 }

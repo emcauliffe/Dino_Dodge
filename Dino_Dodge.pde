@@ -8,12 +8,13 @@ float distancex2; //track distance between dino and cactus two
 int score;  //track score
 int highscore; //highscore
 
+
 //Runs once
 void setup() {
   size(800, 200);
   frameRate(60);
-  c1 = new Cactus(900, 175, -0.3, -3, 50, 900);
-  c2 = new Cactus(1050, 175, -0.3, -3, 45, 1050);
+  c1 = new Cactus(900, 175, -0.3, -3, 25, 900);
+  c2 = new Cactus(1050, 175, -0.3, -3, 22.5, 1050);
   d1 = new Dino(170, 0, 0);
   //x3 = 1200;  //cactus three
   //a3 = 0.6; //accel. of cactus three
@@ -29,6 +30,11 @@ void draw() {
   c1.update(gravity);
   c2.update(gravity);
   d1.update(gravity);
+  if (d1.isTouching(c1)) {
+    textSize(80);
+    text("Hit", 400, 100);
+    noLoop();
+  }
 
   //determine whether there is a hit on cactus one
   //  float ax1 = dinoY - 175; //leg a
@@ -76,7 +82,7 @@ void draw() {
 void keyPressed() {
   if (key == ' ') {
     if (d1.getY() == 170) {
-      d1.setA(-1);
+      d1.setA(-1.1);
     }
   }
   //}
