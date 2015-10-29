@@ -29,14 +29,6 @@ void draw() {
   c1.update(gravity);
   c2.update(gravity);
   d1.update(gravity);
-  //status updates
-  //textSize(12);
-  //text("dinoY is " + dinoY, 150, 25);
-  //text("dinoS is " + dinoS, 150, 50);
-  //text("dinoA is " + dinoA, 150, 75);
-  //text("distancex1 is " + distancex1, 150, 100);
-  //text("distancex2 is " + distancex2, 350, 100);
-  //text("score:" + score, 725, 15);
 
   //determine whether there is a hit on cactus one
   //  float ax1 = dinoY - 175; //leg a
@@ -82,10 +74,11 @@ void draw() {
   //}
 }
 void keyPressed() {
-  //if (key == ' ') {
-  //  if (dinoY > 169) {
-  //    dinoA=-1.1;
-  //  }
+  if (key == ' ') {
+    if (d1.getY() == 170) {
+      d1.setA(-1);
+    }
+  }
   //}
   //if (gameover > 0) {
   //  if (key == 'r' || key =='R') {
@@ -109,5 +102,5 @@ void keyPressed() {
   //    }
   //    score = 0;
   //}
-   //}
+  //}
 }
