@@ -7,7 +7,7 @@ float distancex1; //track distance between dino and cactus x1
 float distancex2; //track distance between dino and cactus two
 int score;  //track score
 int highscore; //highscore
-
+ 
 
 //Runs once
 void setup() {
@@ -31,6 +31,11 @@ void draw() {
   c2.update(gravity);
   d1.update(gravity);
   if (d1.isTouching(c1)) {
+    textSize(80);
+    text("Hit", 400, 100);
+    noLoop();
+  }
+  if (d1.isTouching(c2)) {
     textSize(80);
     text("Hit", 400, 100);
     noLoop();
