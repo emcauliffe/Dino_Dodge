@@ -54,11 +54,15 @@ class Dino {
   boolean isTouching(Cactus c) {
     // determine distance between the objects
     //        dino - cactus
-    float a = dinoY - c.getY();
-    float b = dinoX - c.getX();
-    float distance = sqrt(a*a + b*b);
+    float a = (c.getY() - dinoY);
+    float b = (c.getX() - dinoX);
+    float distance = (sqrt(a*a + b*b));
 
+<<<<<<< HEAD
     if ( distance < (dinoR + c.getR() )*0.75 ) {
+=======
+    if ( distance < (dinoR + c.getR())) {
+>>>>>>> origin/master
       return true;
     }
     // when dino is not touching, say "no" (not touching) or "false"
