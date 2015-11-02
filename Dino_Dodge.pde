@@ -7,7 +7,7 @@ float distancex1; //track distance between dino and cactus x1
 float distancex2; //track distance between dino and cactus two
 int score;  //track score
 int highscore; //highscore
- 
+
 
 //Runs once
 void setup() {
@@ -40,10 +40,6 @@ void draw() {
     text("Hit", 400, 100);
     noLoop();
   }
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
   //determine whether there is a hit on cactus one
   //  float ax1 = dinoY - 175; //leg a
   //  float bx1 = c1.getX() - 50;  //legb

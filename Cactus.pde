@@ -35,6 +35,6 @@ class Cactus {
     return y1;
   }
   float getR() {
-    return r1;
+    return (r1);
   }
 }
