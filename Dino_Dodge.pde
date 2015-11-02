@@ -35,7 +35,11 @@ void draw() {
     text("Hit", 400, 100);
     noLoop();
   }
-
+  if (d1.isTouching(c2)) {
+    textSize(80);
+    text("Hit", 400, 100);
+    noLoop();
+  }
   //determine whether there is a hit on cactus one
   //  float ax1 = dinoY - 175; //leg a
   //  float bx1 = c1.getX() - 50;  //legb

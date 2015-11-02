@@ -58,7 +58,7 @@ class Dino {
     float b = dinoX - c.getX();
     float distance = sqrt(a*a + b*b);
 
-    if ( distance < (dinoR + c.getR() ) ) {
+    if ( distance < (dinoR + c.getR() )*0.75 ) {
       return true;
     }
     // when dino is not touching, say "no" (not touching) or "false"
