@@ -5,7 +5,6 @@ class Cactus {
   float y1; //tracks y coord of first cactus
   float r1; //radius of circle
   float resetPosition;  // Where the cactus should reset to
-
   Cactus (float x_, float y_, float a_, float s_, float r_, float rp_) {
     x1 = x_;
     a1 = a_;
@@ -14,7 +13,6 @@ class Cactus {
     r1 = r_;
     resetPosition = rp_;
   }
-
   void update(float gravity) {
     //make cactus move
     ellipse(x1, y1, r1*2, r1*2); // Cactus One
@@ -25,7 +23,6 @@ class Cactus {
       s1 = -3;
     }
   }
-
   //get x
   //purpose: return the x position of the cactus
   float getX() {

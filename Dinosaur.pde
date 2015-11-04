@@ -4,7 +4,6 @@ class Dino {
   float dinoA; //tracks acceleration of the dino
   float dinoX; //tracks x coord of dino
   float dinoR; //radius of dino
-
   Dino (float y_, float s_, float a_) {
     dinoX = 50;
     dinoY = y_;
@@ -12,7 +11,6 @@ class Dino {
     dinoA = a_;
     dinoR = 30;
   }
-
   void update(float gravity) {
     //make dino move
     ellipse(dinoX, dinoY, dinoR*2, dinoR*2); //draw dino
@@ -29,11 +27,7 @@ class Dino {
     text("dinoY is " + dinoY, 150, 25);
     text("dinoS is " + dinoS, 150, 50);
     text("dinoA is " + dinoA, 150, 75);
-    //text("distancex1 is " + distancex1, 150, 100);
-    //text("distancex2 is " + distancex2, 350, 100);
-    //text("score:" + score, 725, 15);
   }
-
   // getY
   //
   // Purpose: an accessor method; lets us find out where the dino is (vertically)
