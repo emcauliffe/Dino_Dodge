@@ -7,7 +7,7 @@ float distancex1; //track distance between dino and cactus x1
 float distancex2; //track distance between dino and cactus two
 int score;  //track score
 int highscore; //highscore
-boolean gameover; // is gameover boolean
+boolean gameover; // gameover boolean
 //Runs once
 void setup() {
   size(800, 200);
@@ -15,7 +15,7 @@ void setup() {
   c1 = new Cactus(900, 175, -0.3, -3, 25, 900);
   c2 = new Cactus(1050, 175, -0.3, -3, 22.5, 1050);
   d1 = new Dino(170, 0, 0);
-  gravity = 0.0675; //gravity
+  gravity = 0.0700 ; //gravity
   gameover = false;
   score = 0;
 }
@@ -39,6 +39,7 @@ void draw() {
   if (gameover == false) {
     background(255);
     fill (0);
+    text("Score: " + score, 725, 15);
     c1.update(gravity);
     c2.update(gravity);
     d1.update(gravity);
@@ -52,13 +53,18 @@ void draw() {
       text("Hit", 400, 100);
       gameover = true;
     }
-    score = score +1;
+    if (c1.getX()  < 0) {
+      score = score +1;
+    }
+    if (c2.getX() < 0) {
+      score = score +1;
+    }
   }
 }
 void keyPressed() {
   if (key == ' ') {
     if (d1.getY() == 170) {
-      d1.setA(-1.1);
+      d1.setA(-1.2);
     }
   }
   if (gameover == true) {

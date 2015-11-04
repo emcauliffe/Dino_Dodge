@@ -23,10 +23,10 @@ class Dino {
       dinoY = 170;
     }
     //status updates
-    textSize(12);
-    text("dinoY is " + dinoY, 150, 25);
-    text("dinoS is " + dinoS, 150, 50);
-    text("dinoA is " + dinoA, 150, 75);
+    //textSize(12);
+    //text("dinoY is " + dinoY, 150, 25);
+    //text("dinoS is " + dinoS, 150, 50);
+    //text("dinoA is " + dinoA, 150, 75);
   }
   // getY
   //
