@@ -73,7 +73,7 @@ void keyPressed() {
       c1 = new Cactus(900, 175, -0.3, -3, 25, 900);
       c2 = new Cactus(1050, 175, -0.3, -3, 22.5, 1050);
       d1 = new Dino(170, 0, 0);
+      score = 0;
     }
-    score = 0;
   }
 }
